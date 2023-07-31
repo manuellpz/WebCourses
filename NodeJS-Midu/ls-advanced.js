@@ -1,5 +1,6 @@
 const fs = require("node:fs/promises");
 const path = require("node:path");
+const pc = require('picocolors');
 
 const folder = process.argv[2] ?? ".";
 
@@ -9,7 +10,7 @@ async function ls(folder) {
   try {
     files = await fs.readdir(folder);
   } catch (error) {
-    console.log("Ha ocurrido un error: ", error);
+    console.log(pc.red("Ha ocurrido un error: ", error));
     process.exit(1);
   }
 
@@ -35,7 +36,7 @@ async function ls(folder) {
   });
   const filesInfo = await Promise.all(filesPromises);
   filesInfo.forEach((fileInfo) => {
-    console.log(fileInfo);
+    console.log(pc.green(fileInfo));
   });
 }
 
