@@ -1,21 +1,15 @@
-const fs = require('node:fs/promises')
-const path = require('node:path');
+const fs = require("node:fs/promises");
+const path = require("node:path");
 
-(async () => {
-  const route = process.argv[2] ?? '.'
-  fs.readdir(route)
-    .then((files) => {
-      files.forEach(async (file) => {
-        const filePath = await path.join(route, file)
-        const stat = await fs.stat(filePath)
-        const isDirectory = stat.isDirectory() ? 'd' : 'f'
+const folder = process.argv[2] ?? ".";
 
-        console.log(
-          `${isDirectory} - ${file.padEnd(30)} ${stat.mtime
-            .toLocaleString()
-            .padStart(10)}`
-        )
-      })
-    })
-    .catch((error) => console.log(error))
-})()
+fs.readdir(folder)
+  .then((files) => {
+    files.forEach(async (file) => {
+      let route = path.join(folder, file);
+      let stats = await fs.stat(route);
+      let isDirectory = stats.isDirectory() ? 'd' : 'f';
+      console.log(`${isDirectory} ${file.padEnd(25)} ${stats.mtime.toLocaleString().padStart(20)}`);
+    });
+  })
+  .catch((error) => console.log(error));
