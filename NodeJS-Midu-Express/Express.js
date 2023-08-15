@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const express = require('express')
 
 const app = express()
@@ -7,6 +6,28 @@ const app = express()
 app.disable('x-powered-by')
 
 const PORT = process.env.PORT ?? 3000
+
+app.use(express.json())
+
+
+//Sería el concepto
+// app.use((req,res,next) => {
+//    if(req.method !== 'POST') return next()
+//    if(req.headers['content-type'] !== 'application/json') return next()
+
+//    //Solo llegan request que son post y que tienen el header content-type: application/json
+//    let body = ''
+
+//    req.on('data',chunk => {
+//       body += chunk.toString()
+//    })
+
+//    req.on('end',()=>{
+//       const data = JSON.parse(body)
+//       req.body = data
+//       next()
+//    })
+// })
 
 app.get('/', (req, res) => {
    //Express dependiendo la respuesta que envies, automaticamente agrega el content-type
@@ -20,18 +41,7 @@ app.get('/pokemon/ditto',(req,res)=>{
 })
 
 app.post('/pokemon', (req, res) => {
-   let body = ''
-
-   //Escuchamos el evento data
-   req.on('data', chunk => {
-      body += chunk.toString();
-   })
-
-   //Cuando terminen los datos
-   req.on('end', () => {
-      const data = JSON.parse(body)
-      res.status(201).json(data)
-   })
+   res.status(201).json(req.body)
 })
 
 //Es importante colocarlo al ultimo
@@ -42,44 +52,3 @@ app.use((req,res)=>{
 app.listen(PORT, () => {
    console.log(`Listening on port: http://localhost:${PORT}`)
 })
-=======
-const express = require("express");
-
-const app = express();
-
-const PORT = process.env.PORT ?? 3000;
-
-const ditto = require("./pokemon/ditto.json");
-
-app.get("/", (req, res) => {
-  res.send("<h1>This Is My Web Page</h1>");
-});
-
-app.get("/pokemon/ditto", (req, res) => {
-   res.json(ditto)
-});
-
-app.post('/pokemon',(req,res)=>{
-   let body = ''
-
-   //Escuchamos el evento data
-   req.on('data',chunk=>{
-      body += chunk.toString()
-   })
-
-   //Cuando termine
-   req.on('end',()=>{
-      const data = JSON.parse(body)
-      res.status(201).json(data)
-   })
-})
-
-
-app.use((req,res)=>{
-   res.status(404).send('<h1>Error 404 NOT FOUND</h1>')
-})
-
-app.listen(PORT, () => {
-  console.log(`Server Listening on port: http://localhost:${PORT}`);
-});
->>>>>>> 3e89c660dfba783e8995578fe3884a1094e5e71d
