@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon ./http.js",
-    "api": "nodemon ./routing.js"
+    "api": "nodemon ./routing.js",
+    "api2": "nodemon ./Express.js"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +13,8 @@
   "description": "",
   "devDependencies": {
     "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "express": "4.18.2"
   }
 }

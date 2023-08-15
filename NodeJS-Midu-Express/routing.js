@@ -23,17 +23,17 @@ const processRequest = (req, res) => {
           req.on('data', chunk => {
             body += chunk.toString();
           })
-          req.on('end',() => {
+          req.on('end', () => {
             const data = JSON.parse(body);
             //Podemos escribir tanto el statuscode como la cabecera con el método writeHead
-            res.writeHead(201,{'Content-Type':'application/json; charset=utf-8'})
+            res.writeHead(201, { 'Content-Type': 'application/json; charset=utf-8' })
             data.timestamp = Date.now();
             return res.end(JSON.stringify(data));
           })
           break;
-        
+
         default:
-          res.setHeader('Content-Type','text/plain; charset=utf-8');
+          res.setHeader('Content-Type', 'text/plain; charset=utf-8');
           res.statusCode = 404;
           return res.end('404 Not Found');
       }
