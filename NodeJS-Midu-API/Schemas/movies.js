@@ -17,6 +17,13 @@ function validateMovie(object) {
    return movieSchema.safeParse(object)
 }
 
+function validatePartialMovie(input) {
+   //el método partial() hace que todos los elementos sean opcionales, lo que nos permite realizar cambios especificos
+  return movieSchema.partial().safeParse(input)
+}
+
+
 module.exports = {
-   validateMovie
+   validateMovie,
+   validatePartialMovie
 }
