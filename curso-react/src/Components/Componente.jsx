@@ -1,22 +1,16 @@
 import React,{Component} from "react";
 
-// class Componente extends Component {
+class Componente extends Component {
    
-//    render() {
-//       return <h2>{this.props.msg}</h2>
-//    }
-// }
+   render() {
+      return <h2>{this.props.msg}</h2>
+   }
+}
 
 // function Componente(props) {
 //    return <h2>{props.msg}</h2>
 // }
 
-const Componente = props => <h2>{props.msg}</h2>
+// const Componente = props => <h2>{props.msg}</h2>
 
 export default Componente;
-
-//Notas
-/*
- - En los componentes de clase tenemos que usar por default el método render() lo cual nos permite renderizar el código jsx.
-
-*/
