@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 
 const Propiedades = (props) => {
   return (
@@ -13,7 +13,7 @@ const Propiedades = (props) => {
         <li>{props.arreglo.join(", ")}</li>
         <li>{`Datos: ${props.objeto.nombre} - ${props.objeto.edad} años - ${props.objeto.correo}`}</li>
         <li>{props.elementoReact}</li>
-        <li>{(props.arreglo.map(props.funcion)).join(", ")}</li>
+        <li>{props.arreglo.map(props.funcion).join(", ")}</li>
         <li>{props.componente}</li>
       </ul>
     </div>
@@ -23,8 +23,9 @@ const Propiedades = (props) => {
 Propiedades.defaultProps = {
   porDefecto: "Propiedad Por Defecto",
 };
+
 Propiedades.propTypes = {
-   numero:PropTypes.number.isRequired
-}
+  numero: PropTypes.number.isRequired,
+};
 
 export default Propiedades;

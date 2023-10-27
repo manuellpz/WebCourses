@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Componente from "./Components/Componente";
 import Propiedades from "./Components/Propiedades";
+import Estado from './Components/Estado';
 
 function App() {
   const stations = ["Spring", "Summer", "Fall / Autumn", "Winter"];
@@ -26,6 +27,8 @@ function App() {
         funcion={num => num*num}
         componente={<Componente msg="Soy un componente pasado como Prop"/>}
       />
+      <hr />
+      <Estado />
     </>
   );
 }
