@@ -1,8 +1,8 @@
 import React from "react";
-import "./App.css";
 import Componente from "./Components/Componente";
 import Propiedades from "./Components/Propiedades";
 import Estado from './Components/Estado';
+import RenderizadoCondicional from "./Components/RenderizadoCondicional";
 
 function App() {
   const stations = ["Spring", "Summer", "Fall / Autumn", "Winter"];
@@ -29,6 +29,8 @@ function App() {
       />
       <hr />
       <Estado />
+      <hr />
+      <RenderizadoCondicional />
     </>
   );
 }
