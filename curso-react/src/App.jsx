@@ -5,7 +5,8 @@ import Propiedades from "./Components/Propiedades";
 import Estado from './Components/Estado';
 import RenderizadoCondicional from "./Components/RenderizadoCondicional";
 import RenderizadoElementos from "./Components/RenderizadoElementos";
-import Eventos from "./Components/Eventos";
+import EventosES6 from "./Components/EventosES6";
+import EventosES7 from "./Components/EventosES7";
 
 function App() {
   const stations = ["Spring", "Summer", "Fall / Autumn", "Winter"];
@@ -37,7 +38,9 @@ function App() {
       <hr />
       <RenderizadoElementos />
       <hr />
-      <Eventos />
+      <EventosES6 />
+      <hr />
+      <EventosES7 />
     </>
   );
 }
