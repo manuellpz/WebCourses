@@ -1,0 +1,4 @@
+EVENTOS
+   * SyntheticBaseEvent => En React los evento se manejan con SyntheticEvent que es un objeto que envuelve al evento nativo del navegador, para proporcionar una interfaz unificada para trabajar en distintos navegadores. Si queremos usar el evento nativo usamos la propiedad del SyntheticEvent llamada nativeEvent.
+
+   * Eventos Personalizados => en React los eventos tales como onClick SOLAMENTE se pueden usar en elementos jsx, por tal motivo no podemos asignar eventos a un componente.

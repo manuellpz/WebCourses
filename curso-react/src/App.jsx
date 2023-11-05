@@ -7,6 +7,7 @@ import RenderizadoCondicional from "./Components/RenderizadoCondicional";
 import RenderizadoElementos from "./Components/RenderizadoElementos";
 import EventosES6 from "./Components/EventosES6";
 import EventosES7 from "./Components/EventosES7";
+import MasSobreEventos from "./Components/MasSobreEventos";
 
 function App() {
   const stations = ["Spring", "Summer", "Fall / Autumn", "Winter"];
@@ -41,6 +42,8 @@ function App() {
       <EventosES6 />
       <hr />
       <EventosES7 />
+      <hr />
+      <MasSobreEventos />
     </>
   );
 }
