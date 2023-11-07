@@ -8,6 +8,7 @@ import RenderizadoElementos from "./Components/RenderizadoElementos";
 import EventosES6 from "./Components/EventosES6";
 import EventosES7 from "./Components/EventosES7";
 import MasSobreEventos from "./Components/MasSobreEventos";
+import ComunicacionComponentes from './Components/ComunicacionComponentes';
 
 function App() {
   const stations = ["Spring", "Summer", "Fall / Autumn", "Winter"];
@@ -44,6 +45,8 @@ function App() {
       <EventosES7 />
       <hr />
       <MasSobreEventos />
+      <hr />
+      <ComunicacionComponentes />
     </>
   );
 }
