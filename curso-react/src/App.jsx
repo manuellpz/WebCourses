@@ -10,6 +10,7 @@ import EventosES7 from "./Components/EventosES7";
 import MasSobreEventos from "./Components/MasSobreEventos";
 import ComunicacionComponentes from './Components/ComunicacionComponentes';
 import CicloVida from "./Components/CicloVida";
+import AjaxApis from "./Components/AjaxApis";
 
 function App() {
   const stations = ["Spring", "Summer", "Fall / Autumn", "Winter"];
@@ -50,6 +51,8 @@ function App() {
       <ComunicacionComponentes />
       <hr />
       <CicloVida />
+      <hr />
+      <AjaxApis />
     </>
   );
 }
