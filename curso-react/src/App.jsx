@@ -13,6 +13,7 @@ import CicloVida from "./Components/CicloVida";
 import AjaxApis from "./Components/AjaxApis";
 import ContadorHooks from "./Components/ContadorHooks";
 import ScrollHooks from "./Components/ScrollHooks";
+import RelojHooks from "./Components/RelojHooks";
 
 function App() {
   const stations = ["Spring", "Summer", "Fall / Autumn", "Winter"];
@@ -59,6 +60,8 @@ function App() {
       <ContadorHooks />
       <hr />
       <ScrollHooks />
+      <hr />
+      <RelojHooks />
     </>
   );
 }
