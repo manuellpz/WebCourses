@@ -15,6 +15,7 @@ import ContadorHooks from "./Components/ContadorHooks";
 import ScrollHooks from "./Components/ScrollHooks";
 import RelojHooks from "./Components/RelojHooks";
 import AjaxHooks from "./Components/AjaxHooks";
+import HooksPersonalizados from "./Components/HooksPersonalizados";
 
 function App() {
   const stations = ["Spring", "Summer", "Fall / Autumn", "Winter"];
@@ -65,6 +66,8 @@ function App() {
       <RelojHooks />
       <hr />
       <AjaxHooks />
+      <hr />
+      <HooksPersonalizados />
     </>
   );
 }
