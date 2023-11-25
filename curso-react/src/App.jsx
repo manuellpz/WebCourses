@@ -1,14 +1,14 @@
 import React from "react";
-import "./app.css"
+import "./app.css";
 import Componente from "./Components/Componente";
 import Propiedades from "./Components/Propiedades";
-import Estado from './Components/Estado';
+import Estado from "./Components/Estado";
 import RenderizadoCondicional from "./Components/RenderizadoCondicional";
 import RenderizadoElementos from "./Components/RenderizadoElementos";
 import EventosES6 from "./Components/EventosES6";
 import EventosES7 from "./Components/EventosES7";
 import MasSobreEventos from "./Components/MasSobreEventos";
-import ComunicacionComponentes from './Components/ComunicacionComponentes';
+import ComunicacionComponentes from "./Components/ComunicacionComponentes";
 import CicloVida from "./Components/CicloVida";
 import AjaxApis from "./Components/AjaxApis";
 import ContadorHooks from "./Components/ContadorHooks";
@@ -17,6 +17,7 @@ import RelojHooks from "./Components/RelojHooks";
 import AjaxHooks from "./Components/AjaxHooks";
 import HooksPersonalizados from "./Components/HooksPersonalizados";
 import Referencias from "./Components/Referencias";
+import Formularios from "./Components/Formularios";
 
 function App() {
   const stations = ["Spring", "Summer", "Fall / Autumn", "Winter"];
@@ -35,11 +36,11 @@ function App() {
         cadena="Esto es una cadena de texto"
         numero={26}
         booleano={true}
-        arreglo={[1,3,5,7,9,11,15]}
-        objeto={{nombre:"Manuel",edad:26,correo:"manuelmzt@gmail.com"}}
+        arreglo={[1, 3, 5, 7, 9, 11, 15]}
+        objeto={{ nombre: "Manuel", edad: 26, correo: "manuelmzt@gmail.com" }}
         elementoReact={<i>Esto es un elemento React</i>}
-        funcion={num => num*num}
-        componente={<Componente msg="Soy un componente pasado como Prop"/>}
+        funcion={(num) => num * num}
+        componente={<Componente msg="Soy un componente pasado como Prop" />}
       />
       <hr />
       <Estado />
@@ -71,6 +72,18 @@ function App() {
       <HooksPersonalizados />
       <hr />
       <Referencias />
+      <hr />
+      <Formularios />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </>
   );
 }
