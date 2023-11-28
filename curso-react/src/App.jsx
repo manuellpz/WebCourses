@@ -19,6 +19,7 @@ import HooksPersonalizados from "./Components/HooksPersonalizados";
 import Referencias from "./Components/Referencias";
 import Formularios from "./Components/Formularios";
 import Estilos from "./Components/Estilos";
+import ComponentesEstilizados from "./Components/ComponentesEstilizados";
 
 function App() {
   const stations = ["Spring", "Summer", "Fall / Autumn", "Winter"];
@@ -77,6 +78,8 @@ function App() {
       <Formularios />
       <hr />
       <Estilos />
+      <hr />
+      <ComponentesEstilizados />
       <br />
       <br />
       <br />
