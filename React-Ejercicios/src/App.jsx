@@ -1,12 +1,12 @@
-import React from 'react';
-
-import './App.css'
+import CrudApp from "./components/CrudApp"
 
 function App() {
 
   return (
     <>
-      <h2>CRUD APP - BASIC</h2>
+      <h1>EJERCICIOS REACT</h1>
+      <hr />
+      <CrudApp />
     </>
   )
 }
