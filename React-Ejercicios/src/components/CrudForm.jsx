@@ -1,20 +1,43 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 const initialForm = {
-   id:null,
-   name:"",
-   constellation:""
-}
+  id: null,
+  name: "",
+  constellation: "",
+};
 
-const CrudForm = () => {
+const CrudForm = ({createData,updateData,datoToEdit,setDataToEdit}) => {
+  const [form, setForm] = useState(initialForm);
 
-   const [form,setForm] = useState(initialForm)
+  const handleSubmit = (e) => {
+    e.preventDefault()
 
-  const handleSubmit = (e) => {};
+    if(!form.name || !form.constellation) {
+      alert('Datos Incompletos')
+      return;
+    }
+    //Si el id es null entonces significa que deseamos crear un nuevo registro, caso contrario actualizarlo
+    if(form.id === null) {
+      createData(form)
+    }else {
+      updateData(form)
+    }
 
-  const handleChange = (e) => {};
+    handleReset()
 
-  const handleReset = (e) => {};
+  };
+
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleReset = (e) => {
+    setForm(initialForm)
+    setDataToEdit(null)
+  };
 
   return (
     <>
@@ -35,7 +58,7 @@ const CrudForm = () => {
           value={form.constellation}
         />
         <input type="submit" value="Enviar" />
-        <input type="reset" value="Limpiar" onClick={handleReset}/>
+        <input type="reset" value="Limpiar" onClick={handleReset} />
       </form>
     </>
   );

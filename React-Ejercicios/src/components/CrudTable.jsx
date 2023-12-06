@@ -13,12 +13,12 @@ const CrudTable = ({ data }) => {
           </tr>
         </thead>
         <tbody>
-          {data.Caballeros.length === 0 ? (
+          {data.length === 0 ? (
             <tr>
               <td colSpan={3}>Sin Datos</td>
             </tr>
           ) : (
-            data.Caballeros.map((el) => <CrudTableRow key={el.id} cab={el} />)
+            data.map((el) => <CrudTableRow key={el.id} cab={el} />)
           )}
         </tbody>
       </table>
