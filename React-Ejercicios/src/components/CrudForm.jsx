@@ -6,8 +6,16 @@ const initialForm = {
   constellation: "",
 };
 
-const CrudForm = ({createData,updateData,datoToEdit,setDataToEdit}) => {
+const CrudForm = ({createData,updateData,dataToEdit,setDataToEdit}) => {
   const [form, setForm] = useState(initialForm);
+
+  useEffect(()=>{
+    if(dataToEdit) {
+      setForm(dataToEdit)
+    }else {
+      setForm(initialForm)
+    }
+  },[dataToEdit])
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -41,7 +49,7 @@ const CrudForm = ({createData,updateData,datoToEdit,setDataToEdit}) => {
 
   return (
     <>
-      <h3>Agregar</h3>
+      <h3>{dataToEdit ? "Editar" : "Agregar"}</h3>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
