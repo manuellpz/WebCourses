@@ -19,7 +19,7 @@ export const helpHttp = () => {
     //Si vamos a enviar datos estos los mandamos por la propiedad body de las options pero en formato String. Si no especificamos el body este será false, por lo tanto lo eliminamos de las options
     options.body = JSON.stringify(options.body) || false;
     if (!options.body) delete options.body;
-    console.log(options);
+
     setTimeout(() => controller.abort(), 3000);
 
     return fetch(endpoint, options)
@@ -27,7 +27,7 @@ export const helpHttp = () => {
         res.ok
           ? res.json()
           : Promise.reject({
-              error: true,
+              err: true,
               status: res.status || "00",
               statusText: res.statusText || "Ocurrio un error",
             })
