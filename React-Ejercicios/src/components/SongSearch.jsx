@@ -17,8 +17,6 @@ const SongSearch = () => {
 
       let songUrl = `https://api.lyrics.ovh/v1/${artist}/${song}`;
 
-      console.log(songUrl)
-
       setLoading(true);
 
       let songRes = await helpHttp().get(songUrl)
@@ -41,7 +39,7 @@ const SongSearch = () => {
       <h2>Song Search</h2>
       {loading && <Loader />}
       <SongForm handleSearch={handleSearch} />
-      <SongDetails search={search} lyric={lyric}/>
+      {search && !loading && <SongDetails search={search} lyric={lyric}/>}
     </>
   );
 };
