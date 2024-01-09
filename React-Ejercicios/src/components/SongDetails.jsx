@@ -5,13 +5,13 @@ const SongDetails = ({ search, lyric }) => {
   if (!lyric) return null;
 
   return (
-    <>
+    <div>
       {lyric.error || lyric.err || lyric.name === "AbortError" ? (
         <Message msg={`Error No Existe La Canción: ${search.song}`} bgColor="#dc3545" />
       ) : (
-        <SongLyric />
+        <SongLyric title={search.song} lyrics={lyric.lyrics}/>
       )}
-    </>
+    </div>
   );
 };
 

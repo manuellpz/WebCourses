@@ -19,10 +19,10 @@ const SongSearch = () => {
 
       setLoading(true);
 
-      let songRes = await helpHttp().get(songUrl)
+      let songRes = await helpHttp().get(songUrl);
 
       setLyric(songRes);
-      
+
       console.log(songRes);
 
       setLoading(false);
@@ -37,9 +37,11 @@ const SongSearch = () => {
   return (
     <>
       <h2>Song Search</h2>
-      {loading && <Loader />}
-      <SongForm handleSearch={handleSearch} />
-      {search && !loading && <SongDetails search={search} lyric={lyric}/>}
+      <article className="grid-1-3">
+        <SongForm handleSearch={handleSearch} />
+        {loading && <Loader />}
+        {search && !loading && <SongDetails search={search} lyric={lyric} />}
+      </article>
     </>
   );
 };

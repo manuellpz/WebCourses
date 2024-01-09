@@ -26,7 +26,7 @@ const SongForm = ({ handleSearch }) => {
   }
 
   return (
-    <>
+    <div>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -44,7 +44,7 @@ const SongForm = ({ handleSearch }) => {
         />
         <input type="submit" value="Enviar" />
       </form>
-    </>
+    </div>
   );
 };
 
