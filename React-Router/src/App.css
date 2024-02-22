@@ -45,3 +45,33 @@
   display: flex;
   justify-content: space-evenly;
 }
+
+.active-link {
+  border-bottom: 2px solid darkorange;
+  padding-bottom: 2px;
+  font-weight: bold;
+}
+
+.detalleProducto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+
+  & table {
+    width: 60%;
+    background:white;
+    color:black;
+    font-weight: bold;
+
+    & thead tr th{
+      border-left: 2px solid silver;
+    }
+  }
+}
+
+.btn-regresar {
+  background: #ffc107;
+  color:black;
+  font-weight: bold;
+}
