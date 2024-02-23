@@ -10,6 +10,7 @@ export function Menu() {
         <Link to="/about">About</Link>
         <Link to="/productos">Productos</Link>
         <Link to="/inexistente">Error 404</Link>
+        <Link to="/servicios">Servicios</Link>
       </nav>
       <nav className="menu">
         <NavLink

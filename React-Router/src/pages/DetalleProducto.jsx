@@ -1,24 +1,14 @@
 import { useParams, useNavigate } from "react-router-dom";
 
-export const DetalleProducto = () => {
-   const getItem = id => {
-      const items = [
-         {id:1, name:"Producto 1", price:100},
-         {id:2, name:"Producto 2", price:200},
-         {id:3, name:"Producto 3", price:300},
-         {id:4, name:"Producto 4", price:400},
-         {id:5, name:"Producto 5", price:500}
-      ]
-
-      return items.find(el => el.id.toString() === id)
-   }
+export const DetalleProducto = ({productos}) => {
+   
 
    const handleGoBack = () => {
       navigate(-1)
    }
 
    const { id } = useParams()
-   const item = getItem(id)
+   const item = productos.find(el => el.id.toString() === id)
    const navigate = useNavigate()
 
    return ( 
