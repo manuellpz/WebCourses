@@ -1,4 +1,5 @@
 import './App.css'
+import MyPage from './components/MyPage'
 
 function App() {
 
@@ -6,6 +7,7 @@ function App() {
     <div>
         <h1>React - Context API</h1>
         <hr />
+        <MyPage />
     </div>
   )
 }
