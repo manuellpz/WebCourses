@@ -1,10 +1,12 @@
 import { useContext } from "react";
 import ThemeContext from "../context/ThemeContext";
 import LanguageContext from "../context/LanguageContext";
+import AuthContext from "../context/AuthContext";
 
-const HeaderContext = ({ handleAuth, auth }) => {
+const HeaderContext = () => {
   const { theme, handleTheme } = useContext(ThemeContext);
-  const {handleLanguage, texts} = useContext(LanguageContext);
+  const { handleLanguage, texts } = useContext(LanguageContext);
+  const { handleAuth, auth } = useContext(AuthContext);
 
   return (
     <header className={theme}>
