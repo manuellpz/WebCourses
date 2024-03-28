@@ -17,12 +17,11 @@ export function shoppingReducer(state, action) {
     case TYPES.ADD_TO_CART: {
       let newItem = state.products.find((p) => p.id === action.payload);
 
-		
       let itemInCart = state.cart.find((item) => item.id === newItem.id);
-		//si ya existe el item en el carrito
+      //si ya existe el item en el carrito
       return itemInCart
-		//Copiamos todo el estado y modificamos el carrito (internamente modificamos el valor de la propiedad quantity, solo en el item que coincida el id)
-        ? {
+        ? //Copiamos todo el estado y modificamos el carrito (internamente modificamos el valor de la propiedad quantity, solo en el item que coincida el id)
+          {
             ...state,
             cart: state.cart.map((item) =>
               item.id === newItem.id
@@ -36,12 +35,26 @@ export function shoppingReducer(state, action) {
           };
     }
     case TYPES.REMOVE_ONE_FROM_CART: {
+      let product = state.cart.find((item) => item.id === action.payload);
+
+      if(product.quantity === 1) 
+        return {...state, cart: state.cart.filter(item => item.id !== action.payload)}
+
+      else 
+        return {
+        ...state,
+        cart: state.cart.map((item) =>
+          item.id === action.payload
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        ),
+      };
     }
     case TYPES.REMOVE_ALL_FROM_CART: {
-		
+      return {...state, cart: state.cart.filter(item => item.id !== action.payload)}
     }
     case TYPES.CLEAR_CART: {
-		return {...state, cart:[]}
+      return { ...state, cart: [] };
     }
     default:
       return state;

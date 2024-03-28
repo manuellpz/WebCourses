@@ -18,8 +18,8 @@ const CartItem = ({ delFromCart, data }) => {
       ) : (
         <h5>${price}.00</h5>
       )}
-      <button onClick={() => delFromCart(id)}>Eliminar</button>
-      <button onClick={() => delFromCart(id)}>Eliminar Todos</button>
+      <button onClick={() => delFromCart({id,del:"one"})}>Eliminar</button>
+      <button onClick={() => delFromCart({id,del:"all"})}>Eliminar Todos</button>
     </div>
   );
 };
